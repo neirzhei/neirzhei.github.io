@@ -113,6 +113,10 @@ a:hover {
     text-decoration: none;
 }
 
+a, button, input, label {
+  -webkit-tap-highlight-color: transparent;
+}
+
 /* Bold text inside paragraphs */
 strong {
     font-weight: 700;
