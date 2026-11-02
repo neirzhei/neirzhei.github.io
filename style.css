@@ -157,6 +157,13 @@ article h2 {
   color: var(--red);
 }
 
+blockquote {
+  display: block;
+  padding: 0px 30px 0px;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
 /* Margin solely between adjacent paragraphs */
 .content p + p {
   margin-top: 20px;
