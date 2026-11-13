@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Take U-turn</title>
+  <!-- Root-absolute paths: GitHub Pages serves this 404.html for ANY missing
+       path (e.g. /asdads.html, /a/sdsjd.html) while the browser keeps the
+       requested URL. Relative paths would then resolve against that URL
+       (/a/style.css -> 404), leaving the page unstyled and the logo link
+       dead. Absolute paths work from every depth. -->
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/x-icon" href="/neirzhei.png" />
+  <style>
+    .err-head {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .err-code {
+      flex: none;
+      font-size: clamp(60px, 13vw, 118px);
+      line-height: 0.8;
+      letter-spacing: 0.01em;
+      color: var(--gold-hi);
+      text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .err-head-text {
+      display: block;
+      font-size: clamp(19px, 4.4vw, 30px);
+      line-height: 1.05;
+    }
+
+    .err-head-text span {
+      display: block;
+      margin-top: 8px;
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 700;
+      font-style: normal;
+      letter-spacing: 0.22em;
+      color: var(--gold);
+    }
+
+    /* --- MOBILE ------------------------------------------------ */
+    @media (max-width: 650px) {
+      .err-code {
+        font-size: 66px;
+      }
+
+      .err-head {
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="frame">
+    <header>
+      <div class="brand">
+        <a href="/index.html">Abrar Fahad</a>
+      </div>
+
+      <nav>
+        <a href="mailto:neirzhei@gmail.com">Email</a>
+        <a href="https://github.com/neirzhei" target="_blank" rel="noopener">Github</a>
+        <a href="https://x.com/neirzhei">Yaps</a>
+      </nav>
+    </header>
+
+    <article>
+      <h1 class="err-head">
+        <span class="err-code">404</span>
+        <span class="err-head-text">
+          Page Not Found
+          <span>This Address Doesn't Exist</span>
+        </span>
+      </h1>
+    </article>
+  </main>
+
+</body>
+</html>

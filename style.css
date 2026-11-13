@@ -1,0 +1,645 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+:root {
+  --asphalt: #0b0e13;
+  --navy: #12265a;
+  --navy-mid: #1b3470;
+  --navy-deep: #081233;
+  --gold: #f2c200;
+  --gold-hi: #ffde3a;
+  --steel: #d7dee8;
+  --steel-mid: #9aa8c0;
+  --paper: #f6f7f9;
+  --white: #ffffff;
+  --ink: #101a30;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-condensed: "Arial Narrow", "Helvetica Neue Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+::selection {
+  background-color: var(--gold);
+  color: var(--navy-deep);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--asphalt);
+  background-image:
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.018) 0 1px, transparent 1px 4px),
+    linear-gradient(180deg, rgba(255,255,255,0.03), transparent 40%);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 56px 20px 72px;
+}
+
+/* MAIN FRAME — steel plate on asphalt */
+.frame {
+  position: relative;
+  max-width: 840px;
+  margin: 0 auto;
+  background-color: var(--paper);
+  border: 1px solid #000;
+  border-top: 7px solid var(--gold);
+  box-shadow: 14px 14px 0 rgba(0, 0, 0, 0.55);
+  outline: 1px solid rgba(242, 194, 0, 0.35);
+  outline-offset: 6px;
+}
+
+/* HEADER & TOP BAR — deep navy plate */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: var(--navy-deep);
+  border-bottom: 3px solid var(--gold);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 24px;
+  flex: 1;
+}
+
+.brand::before {
+  content: "";
+  flex: none;
+  width: 12px;
+  height: 30px;
+  background: linear-gradient(180deg, var(--gold-hi), var(--gold));
+  transform: skewX(-18deg);
+  box-shadow: 4px 0 0 rgba(255, 255, 255, 0.22);
+}
+
+.brand a,
+.brand span {
+  font-family: var(--font-condensed);
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-style: italic;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.brand a:hover {
+  color: var(--gold-hi);
+  text-decoration: none;
+}
+
+/* NAVIGATION — segmented steel blocks */
+nav {
+  display: flex;
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 108px;
+  padding: 22px 20px;
+  color: var(--steel);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+nav a:last-child {
+  border-right: none;
+}
+
+nav a:hover {
+  background-color: var(--gold);
+  color: var(--navy-deep);
+}
+
+/* UNIFIED STRUCTURAL BARS */
+.list a,
+article h1,
+article h2 {
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+/* HOMEPAGE LIST */
+.list {
+  list-style: none;
+}
+
+.list a {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 24px;
+  font-family: var(--font-condensed);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--navy-deep);
+  text-decoration: none;
+  background-color: var(--paper);
+  border-bottom: 1px solid #c9d1de;
+  border-left: 10px solid transparent;
+}
+
+.list li:last-child a {
+  border-bottom: none;
+}
+
+.list a:hover {
+  background-color: var(--navy-deep);
+  color: var(--white);
+  border-left-color: var(--gold);
+}
+
+/* ARTICLE HEADINGS */
+article h1 {
+  position: relative;
+  padding: 30px 24px 26px;
+  font-family: var(--font-condensed);
+  font-size: 34px;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  color: var(--white);
+  background:
+    repeating-linear-gradient(115deg, rgba(242,194,0,0.0) 0 26px, rgba(242,194,0,0.14) 26px 38px),
+    linear-gradient(90deg, var(--navy-deep), var(--navy-mid));
+  border-left: 10px solid var(--gold);
+  border-bottom: 1px solid var(--navy-deep);
+}
+
+article h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: repeating-linear-gradient(115deg, var(--gold) 0 14px, var(--navy-deep) 14px 22px);
+}
+
+article h2 {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 17px 24px;
+  font-family: var(--font-condensed);
+  font-size: 16px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+  color: var(--navy-deep);
+  background-color: #e6eaf2;
+  border-left: 10px solid var(--gold);
+  border-top: 1px solid #c9d1de;
+  border-bottom: 1px solid #c9d1de;
+}
+
+/* ARTICLE BODY / PROSE */
+.content {
+  padding: 30px 24px 34px;
+}
+
+.deck {
+  padding: 28px 24px 0;
+  font-size: 19px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: var(--navy-mid);
+  border-bottom: 1px solid #c9d1de;
+}
+
+.content p {
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: var(--ink);
+}
+
+.content blockquote {
+  display: block;
+  margin: 4px 0;
+  padding: 20px 22px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--white);
+  background: linear-gradient(90deg, var(--navy-deep), var(--navy-mid));
+  border-left: 8px solid var(--gold);
+}
+
+.content blockquote p {
+  color: var(--white);
+}
+
+blockquote {
+  display: block;
+  margin: 4px 0;
+  padding: 20px 22px;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--white);
+  background: linear-gradient(90deg, var(--navy-deep), var(--navy-mid));
+  border-left: 8px solid var(--gold);
+}
+
+blockquote p {
+  color: var(--white);
+}
+
+.content p + p {
+  margin-top: 20px;
+}
+
+.content blockquote + p {
+  margin-top: 20px;
+}
+
+/* IN-ARTICLE LINKS
+   Hover: a tilted gold cover grows from the left edge of the
+   text to the right, skewed like a forward slash.
+   Before hover it is scaled to nothing, and the link clips it
+   so it never paints over neighbouring words. */
+.content a {
+  position: relative;
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: hidden;
+  isolation: isolate;
+  color: var(--navy-deep);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+  padding: 0 4px;
+  font-weight: 600;
+}
+
+.content a::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -12px;
+  width: calc(100% + 24px);
+  background-color: var(--gold);
+  transform: skewX(-18deg) scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.16s ease-out !important;
+}
+
+.content a:hover {
+  color: var(--navy-deep);
+  text-decoration: none;
+}
+
+.content a:hover::before {
+  transform: skewX(-18deg) scaleX(1);
+}
+
+/* Focus support — same cover for keyboard users */
+.content a:focus-visible {
+  outline: 2px solid var(--navy-deep);
+  outline-offset: 2px;
+  color: var(--navy-deep);
+  text-decoration: none;
+}
+
+.content a:focus-visible::before {
+  transform: skewX(-18deg) scaleX(1);
+}
+
+/* PLATE — the content area under the header.
+   It is the positioning context for the Today panel, so the panel is
+   anchored to the top of this block: it starts just below the nav bar
+   and can never sit on top of the nav links. */
+.plate {
+  position: relative;
+}
+
+/* TODAY PANEL — one-line daily items.
+   Desktop: floats over the plate's lower right, overlapping it
+   and sticking out past the right and bottom edges.
+   The top bar drags it; double-click snaps it back.
+   Phone: stationary below the essay list. */
+.panel {
+  margin: 24px;
+  background-color: var(--white);
+  border: 1px solid var(--navy-deep);
+  border-top: 5px solid var(--gold);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.45);
+}
+
+@media (min-width: 651px) {
+  body {
+    overflow-x: clip;
+  }
+
+  /* The panel hangs off the plate's right edge and drops below it.
+     Anchored to the TOP of the plate (which starts right under the
+     header), so it stays clear of the nav links. */
+  .panel {
+    position: absolute;
+    top: 0;
+    right: -64px;
+    width: 380px;
+    margin: 0;
+    z-index: 20;
+  }
+
+  /* Room for the part of the panel that hangs below the plate. */
+  body.home {
+    padding-bottom: 210px;
+  }
+}
+
+.panel-bar {
+  display: flex;
+  align-items: center;
+  padding: 11px 14px;
+  background-color: var(--navy-deep);
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (min-width: 651px) {
+  .panel-bar {
+    cursor: grab;
+    touch-action: none;
+  }
+}
+
+.panel.is-dragging .panel-bar {
+  cursor: grabbing;
+}
+
+.panel-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-condensed);
+  font-size: 15px;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--white);
+}
+
+.panel-title::before {
+  content: "";
+  flex: none;
+  width: 9px;
+  height: 20px;
+  background: linear-gradient(180deg, var(--gold-hi), var(--gold));
+  transform: skewX(-18deg);
+}
+
+/* Rows styled like the essay list: one line each. */
+.panel-list {
+  list-style: none;
+}
+
+.panel-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  font-family: var(--font-condensed);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  color: var(--navy-deep);
+  border-bottom: 1px solid #e1e7f0;
+}
+
+.panel-list li:last-child {
+  border-bottom: none;
+}
+
+.panel-list li::before {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 10px;
+  background-color: var(--gold);
+  border: 1px solid var(--navy-deep);
+}
+
+
+.panel-list li:hover::before {
+  background-color: var(--gold);
+}
+
+/* Dragging state (set by JS, cleared by double-click / on mobile).
+   bottom/right must be cleared: the desktop rule anchors the panel
+   with bottom:-72px, and with a fixed top also set it would
+   stretch the panel tall instead of hugging its content. */
+.panel.is-floating {
+  position: fixed;
+  bottom: auto;
+  right: auto;
+  z-index: 50;
+  box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 650px) {
+  body {
+    padding: 0;
+  }
+
+  .frame {
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  .brand {
+    padding: 18px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  }
+
+  nav {
+    border-left: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  nav a {
+    min-width: 0;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .list a {
+    padding: 18px 16px;
+    font-size: 17px;
+  }
+
+  article h1 {
+    font-size: 27px;
+    padding: 24px 16px 22px;
+  }
+
+  article h2 {
+    padding: 15px 16px;
+    font-size: 15px;
+  }
+
+  .deck {
+    padding: 22px 16px 0;
+    font-size: 17px;
+  }
+
+  .content {
+    padding: 24px 16px 28px;
+  }
+
+  /* Today panel stays stationary below the essay list on phone */
+  .panel,
+  .panel.is-floating {
+    position: static !important;
+    width: auto;
+    margin: 16px;
+    box-shadow: 6px 6px 0 rgba(8, 18, 51, 0.18);
+  }
+
+  .panel-bar {
+    cursor: default;
+    touch-action: auto;
+  }
+}
+
+/* ============================================================
+   STICKERS — GIF decals stuck onto the plate.
+   They hang off the plate's left and right edges, spread out
+   like hand-placed decals, click-through, and never cover the
+   content. They shrink as the viewport narrows, crowding closer
+   to the plate, and when they would touch it they drop out of
+   the overlay into a row under the content.
+   ============================================================ */
+.stickers {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.sticker-rail {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+  align-items: flex-start;
+}
+
+/* Left pair hangs off the left edge: aisi level with the first
+   row, hallucinating dropped below it and pushed further out. */
+.sticker-rail--left {
+  right: 100%;
+  top: 104px;
+  margin-right: 8px;
+}
+
+/* Right sticker hangs off the right edge, level with the top rows. */
+.sticker-rail--right {
+  left: 100%;
+  top: 92px;
+  margin-left: 26px;
+}
+
+.sticker {
+  display: block;
+  /* Shrinks with the gutter, so the decals crowd closer to the
+     plate as the screen narrows instead of running off the edge. */
+  width: clamp(120px, calc((100vw - 1080px) / 2), 190px);
+  height: auto;
+  padding: 5px;
+  background-color: var(--paper);
+  border: 1px solid #000;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.45);
+  transform: translateX(var(--dx, 0px)) rotate(var(--tilt));
+}
+
+/* Each decal gets its own angle and its own offset, so they read
+   as stickers dropped on by hand rather than a tidy column. */
+.sticker--aisi {
+  --tilt: -5deg;
+  --dx: -50%;
+}
+
+.sticker--hallucinating {
+  --tilt: 4deg;
+  --dx: -10%;
+}
+
+.sticker--phd {
+  --tilt: -6deg;
+  --dx: 20git%;
+}
+
+/* NARROW: the decals crowd up against the plate, so once they would
+   touch it they drop below the content as a spread out row. */
+@media (max-width: 1159px) {
+  .stickers {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 96px;
+    padding: 0 12px 24px;
+  }
+
+  .sticker-rail {
+    display: contents;
+  }
+
+  .sticker {
+    width: clamp(96px, 26vw, 150px);
+    --dx: 0px;
+  }
+}
+
+/* PHONE: the panel sits in the flow, so the gap can be tighter. */
+@media (max-width: 650px) {
+  .stickers {
+    margin-top: 52px;
+  }
+}
