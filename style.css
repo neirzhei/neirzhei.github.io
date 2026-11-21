@@ -11,12 +11,21 @@ body {
   color: #000000;
   font-family: "Centaur Bold", "Centaur MT Bold", "Centaur", "CoelacanthBold", serif;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 main {
   max-width: 600px;
   margin: 0 auto;
+}
+
+::selection {
+  background-color: #242424;
+  color: #ffffff;
+}
+
+a, button, input, label {
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
