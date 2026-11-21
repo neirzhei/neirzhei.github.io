@@ -5,116 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Abrar Fahad</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/x-icon" href="neirzhei.png" />
+  <link rel="icon" type="image/x-icon" href="neirzhei.png">
 </head>
-<body class="home">
+<body>
 
-  <main class="frame">
-    <header>
-      <div class="brand">
-        <span>Abrar Fahad</span>
-      </div>
+  <main>
+    <p>/// <a href="https://github.com/neirzhei" target="_blank" rel="noopener">GITHUB</a> /// <a href="mailto:neirzhei@gmail.com">EMAIL</a> /// <a href="https://x.com/neirzhei" target="_blank" rel="noopener">X</a></p>
+  </br>
 
-      <nav>
-        <a href="mailto:neirzhei@gmail.com">Email</a>
-        <a href="https://github.com/neirzhei" target="_blank" rel="noopener">Github</a>
-        <a href="https://x.com/neirzhei">Yaps</a>
-      </nav>
-    </header>
-
-    <!-- PLATE: the content area under the header. The panel is anchored to
-         the top of this block, so it always starts just below the nav bar
-         and never covers the nav links, no matter how tall the header is. -->
-    <div class="plate">
-      <ul class="list">
-        <li ><a href="a/culture-in-order.html">Culture in Order</a></li>
-        <li><a href="a/learning-mandarin.html">Learning Mandarin Daily</a></li>
-      </ul>
-
-      <!-- TODAY PANEL: edit the lines below. Drag the top bar to move it (desktop); double-click it to snap back. -->
-      <section class="panel" id="today-panel" aria-label="Today">
-        <div class="panel-bar" id="today-panel-bar">
-          <span class="panel-title">Currently</span>
-        </div>
-        <ul class="panel-list">
-          <li>Watching a 50 minutes long tech video in chinese.</li>
-          <li>Making a website for an activity me and my friends are gonna do together.</li>
-          <li>Studying 'An Introduction to Thermal Physics' by Daniel Schroeder</li>
-        </ul>
-      </section>
-    </div>
-
-    <!-- STICKERS: GIFs stuck onto the plate like decals.
-         Purely decorative, click-through, they never cover the content. -->
-    <div class="stickers" aria-hidden="true">
-      <div class="sticker-rail sticker-rail--left">
-        <img class="sticker sticker--aisi" src="gif/aisi.gif" alt="">
-        <img class="sticker sticker--hallucinating" src="gif/hallucinating.gif" alt="">
-      </div>
-      <div class="sticker-rail sticker-rail--right">
-        <img class="sticker sticker--phd" src="gif/phd.gif" alt="">
-      </div>
-    </div>
+    <ul class="entry-list">
+      <li>— <a href="a/culture-in-order.html">Culture in Order</a></li>
+      <li>— <a href="a/learning-mandarin.html">Learning Mandarin Daily</a></li>
+    </ul>
   </main>
-
-  <script>
-    (function () {
-      var panel = document.getElementById("today-panel");
-      var bar = document.getElementById("today-panel-bar");
-      if (!panel || !bar) return;
-
-      function isMobile() {
-        return window.matchMedia("(max-width: 650px)").matches;
-      }
-
-      function reset() {
-        panel.classList.remove("is-floating", "is-dragging");
-        panel.style.left = "";
-        panel.style.top = "";
-        panel.style.width = "";
-        panel.style.margin = "";
-      }
-
-      var dragging = false;
-      var offsetX = 0, offsetY = 0;
-
-      bar.addEventListener("pointerdown", function (e) {
-        if (isMobile()) return;
-        var rect = panel.getBoundingClientRect();
-        if (!panel.classList.contains("is-floating")) {
-          panel.classList.add("is-floating");
-          panel.style.left = rect.left + "px";
-          panel.style.top = rect.top + "px";
-          panel.style.width = rect.width + "px";
-          panel.style.margin = "0";
-        }
-        offsetX = e.clientX - panel.getBoundingClientRect().left;
-        offsetY = e.clientY - panel.getBoundingClientRect().top;
-        dragging = true;
-        panel.classList.add("is-dragging");
-        try { bar.setPointerCapture(e.pointerId); } catch (err) {}
-        e.preventDefault();
-      });
-
-      bar.addEventListener("pointermove", function (e) {
-        if (!dragging) return;
-        var x = Math.min(Math.max(e.clientX - offsetX, 0), window.innerWidth - 140);
-        var y = Math.min(Math.max(e.clientY - offsetY, 0), window.innerHeight - 52);
-        panel.style.left = x + "px";
-        panel.style.top = y + "px";
-      });
-
-      function endDrag() {
-        dragging = false;
-        panel.classList.remove("is-dragging");
-      }
-      bar.addEventListener("pointerup", endDrag);
-      bar.addEventListener("pointercancel", endDrag);
-      bar.addEventListener("dblclick", function () {
-        if (!isMobile()) reset();
-      });
-    })();
-  </script>
 
 </body>
 </html>
