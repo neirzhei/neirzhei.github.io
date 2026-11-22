@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Centaur';
-  src: url('/centaur.woff2') format('woff2');
+  src: url('/centaur-bold.otf') format('otf');
   font-weight: bold;
   font-display: swap;
 }
@@ -25,7 +25,7 @@ main {
 }
 
 ::selection {
-  background-color: #242424;
+  background-color: #333333;
   color: #ffffff;
 }
 
