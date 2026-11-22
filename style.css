@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Centry';
   src: url('/centry.ttf') format('truetype');
-  font-weight: 400;
+  font-weight: 100 900;
   font-style: bold;
   font-display: swap; /* Shows fallback text while the font loads */
 }
@@ -15,7 +15,7 @@ body {
   padding: 48px 24px 64px;
   background: #ffffff;
   color: #000000;
-  font-family: "Centaur Bold", "Centaur MT Bold", "Centaur", "Centry", "CoelacanthBold", serif;
+  font-family: "Centaur", "Centaur Bold", "Centaur MT Bold", "Centaur", "Centry", "CoelacanthBold", serif;
   font-weight: bold;
   font-size: 17px;
 }
