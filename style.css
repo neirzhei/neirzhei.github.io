@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Centaur';
-  src: url('/centaur-bold.otf') format('otf');
+  src: url('/centaur-bold.otf') format('opentype');
   font-weight: bold;
   font-display: swap;
 }
