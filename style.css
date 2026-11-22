@@ -7,7 +7,7 @@ body {
   padding: 48px 24px 64px;
   background: #ffffff;
   color: #000000;
-  font-family: "Centaur Bold", "Centaur MT Bold", "Centaur", "CoelacanthBold", serif;
+  font-family: "Centaur Bold", "Centaur MT Bold", "Centaur", "/centaur.ttf", "CoelacanthBold", serif;
   font-weight: bold;
   font-size: 17px;
 }
