@@ -1,6 +1,7 @@
 @font-face {
   font-family: 'Centaur';
-  src: url('/centaur-bold.otf') format('opentype');
+  src: url('/centaur.woff2') format('woff2');
+  font-weight: bold;
   font-display: swap;
 }
 
@@ -14,6 +15,7 @@ body {
   background: #ffffff;
   color: #000000;
   font-family: "Centaur Bold", "Centaur", "CoelacanthBold", serif;
+  font-weight: bold;
   font-size: 17px;
 }
 
