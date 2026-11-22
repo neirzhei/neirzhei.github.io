@@ -3,7 +3,7 @@
   src: url('/centry.ttf') format('truetype');
   font-weight: bold;
   font-style: bold;
-  font-display: swap; /* Shows fallback text while the font loads */
+  font-display: swap;
 }
 
 *, *::before, *::after {
@@ -15,7 +15,7 @@ body {
   padding: 48px 24px 64px;
   background: #ffffff;
   color: #000000;
-  font-family: "Centaur Bold", "Centaur MT Bold", "Centaur", "CoelacanthBold", serif;
+  font-family: "Centaur Bold", "Centaur", "CoelacanthBold", serif;
   font-weight: bold;
   font-size: 17px;
 }
