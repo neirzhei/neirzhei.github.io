@@ -17,6 +17,9 @@ body {
   font-family: "Centaur Bold", "Centaur", "CoelacanthBold", serif;
   font-weight: bold;
   font-size: 17px;
+  /*-webkit-text-stroke: 0.2px currentColor;
+  paint-order: stroke fill; */
+
 }
 
 main {
